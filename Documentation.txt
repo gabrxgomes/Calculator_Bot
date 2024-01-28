@@ -1,0 +1,49 @@
+Valor Venal: O valor venal é uma estimativa do valor de um bem, 
+realizada pelo poder público12. Esse conceito é aplicado principalmente no mercado 
+imobiliário, mas também se aplica a veículos. O valor venal é utilizado como base 
+de cálculo para alguns impostos, como o IPTU (Imposto sobre a Propriedade Predial e 
+Territorial Urbana) e o IPVA (Imposto sobre a Propriedade de Veículos Automotores)12. 
+No caso de veículos, o valor venal é equivalente ao seu valor de mercado, ou seja, do 
+seu valor de venda2.
+
+Alíquota: A alíquota é um valor fixo ou percentual aplicado sobre qualquer tipo de 
+aquisição de pessoa física ou jurídica34. Ela é utilizada para calcular os tributos 
+a serem pagos aos cofres públicos e pode incidir sobre a renda, a receita e diferentes 
+operações financeiras34. As alíquotas podem ser fixas ou variáveis. É fixa quando 
+aplicada a todos os contribuintes, sem critérios que os diferencie; variável quando 
+muda de acordo com a base de cálculo34.
+
+
+fazer um programa que calcula varias coisas, chamado calculator, ele calcula varias coisas 
+como ipva, imposto de renda e etc.
+
+
+CALCULO IPVA
+
+IPVA = VALOR VENAL X ALIQUOTA/100
+
+EXEMPLO 50.000,00 X 4/100 
+
+EXEMPLO PT2 4/100 = 0,04
+
+EXEMPLO PT3 50.000 X 0,04 = 2.000
+
+
+CALCULO IMPOSTO DE RENDA
+
+IMPOSTO DE RENDA = SALARIO BRUTO X 0,05%
+
+
+CALCULO IRPF
+
+IRPF = SALARIO BRUTO X 0,07%
+
+
+CALCULO INSS
+
+INSS = SALARIO BRUTO X 0,08%
+
+
+CALCULO FGTS
+
+FGTS = SALARIO BRUTO X 0,08%
