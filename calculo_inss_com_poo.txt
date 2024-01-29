@@ -1,0 +1,54 @@
+// Cálculo do INSS em C#
+
+// Importando a biblioteca necessária
+using System;
+
+// Definindo a classe principal
+public class Inss
+{
+    // Método para calcular o INSS
+    public static double CalcularInss(double salario)
+    {
+        // Verificando se o salário é válido
+        if (salario <= 0)
+        {
+            throw new ArgumentException("O salário deve ser maior que zero.");
+        }
+
+        // Definindo as faixas salariais e as alíquotas correspondentes
+        double[] faixasSalariais = { 1045, 2089.60, 3134.40, 6101.06 };
+        double[] aliquotas = { 0.075, 0.09, 0.12, 0.14 };
+
+        // Calculando a faixa salarial do contribuinte
+        int faixaSalarial = 0;
+        while (faixaSalarial < faixasSalariais.Length && salario > faixasSalariais[faixaSalarial])
+        {
+            faixaSalarial++;
+        }
+
+        // Calculando o valor do INSS
+        double valorInss = salario * aliquotas[faixaSalarial];
+
+        // Retornando o valor do INSS
+        return valorInss;
+    }
+
+    // Método para testar o cálculo do INSS
+    public static void Main(string[] args)
+    {
+        // Solicitando o salário do contribuinte
+        Console.WriteLine("Digite o salário do contribuinte:");
+        double salario = double.Parse(Console.ReadLine());
+
+        // Calculando o INSS
+        double valorInss = CalcularInss(salario);
+
+        // Exibindo o valor do INSS
+        Console.WriteLine($"O valor do INSS é: {valorInss}");
+    }
+}
+
+
+https://share.bito.ai/static/share?aid=0f57d7d3-d5dc-4cc1-aea0-4b1252011141
+
+sessão da pesquisa no bitoAI

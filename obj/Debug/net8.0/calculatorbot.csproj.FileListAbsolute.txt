@@ -1,0 +1,15 @@
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\bin\Debug\net8.0\calculatorbot.exe
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\bin\Debug\net8.0\calculatorbot.deps.json
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\bin\Debug\net8.0\calculatorbot.runtimeconfig.json
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\bin\Debug\net8.0\calculatorbot.dll
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\bin\Debug\net8.0\calculatorbot.pdb
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\obj\Debug\net8.0\calculatorbot.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\obj\Debug\net8.0\calculatorbot.AssemblyInfoInputs.cache
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\obj\Debug\net8.0\calculatorbot.AssemblyInfo.cs
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\obj\Debug\net8.0\calculatorbot.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\obj\Debug\net8.0\calculatorbot.sourcelink.json
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\obj\Debug\net8.0\calculatorbot.dll
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\obj\Debug\net8.0\refint\calculatorbot.dll
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\obj\Debug\net8.0\calculatorbot.pdb
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\obj\Debug\net8.0\calculatorbot.genruntimeconfig.cache
+C:\Users\gabri\Desktop\DOTNETAPPS\calculatorbot\obj\Debug\net8.0\ref\calculatorbot.dll
