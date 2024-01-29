@@ -59,6 +59,21 @@ internal class Program
         }
 
 
+
+
+        public static double CalcularINSS(double salariobruto2){
+            double tempvar3 = salariobruto2 * 0.08;
+
+            return tempvar3;
+        }
+
+
+        public static double CalcularFGTS(double salariobruto3){
+            double tempvar4 = salariobruto3 * 0.08;
+
+            return tempvar4;
+        }
+
         private static void Main(string[] args)
          {
         Console.WriteLine("Seja bem vindo ao calculator!");
@@ -140,7 +155,7 @@ internal class Program
                     break;
                 case 2:
                     // Calcular o imposto de renda em C#
-
+                    Console.WriteLine("Você escolheu calcular o imposto de renda!");
                     // Ler a entrada do usuário
                     Console.WriteLine("Digite o seu salário bruto:");
                     double salarioBruto = double.Parse(Console.ReadLine());
@@ -172,10 +187,28 @@ internal class Program
 
                 case 4:
                     Console.WriteLine("4");//
+                    Console.WriteLine("Você escolheu calcular o INSS!");
+                    Console.WriteLine("Digite agora o seu salario Bruto.");
+
+                    double salariobruto2 = double.Parse(Console.ReadLine());
+
+                    double tempvar3 = CalcularIPRF(salariobruto2);
+
+                    Console.WriteLine("O seu INSS é: {0}", tempvar3);
+
                     break;
 
                 case 5:
                     Console.WriteLine("5");//
+                    Console.WriteLine("Você escolheu calcular o FGTS!");
+                    Console.WriteLine("Digite agora o seu salario Bruto.");
+
+                    double salariobruto3 = double.Parse(Console.ReadLine());
+
+                    double tempvar4 = CalcularIPRF(salariobruto3);
+
+                    Console.WriteLine("O seu FGTS é: {0}", tempvar4);
+
                     break;
                 default:
                     Console.WriteLine("O número não é 1, 2, 3, 4 ou 5!!.");//
