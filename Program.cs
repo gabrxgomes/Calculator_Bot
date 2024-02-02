@@ -1,228 +1,158 @@
-﻿using System.Diagnostics;
+﻿using System;
 
-[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
 internal class Program
 {
-    //metodo de calculo geral !
-    public class CalculosDiversos 
+    public static double CalcularIpva(double valorVenal, double aliquota)
     {
-        public static double CalcularIpva(double valorVenal, double aliquota){
+        double tempvar = aliquota / 100;
+        double valoripva = valorVenal * tempvar;
+        return valoripva;
+    }
 
-            double tempvar = aliquota / 100;
+    public static double CalcularImpostoDeRenda(double salarioBruto, int numeroDependentes)
+    {
+        double salarioBase = salarioBruto - numeroDependentes * 189.59;
+        double impostoDeRenda = 0;
 
-            double valoripva = valorVenal * tempvar;
-
-
-            return valoripva;
-
+        if (salarioBase <= 1903.98)
+        {
+            impostoDeRenda = 0;
+        }
+        else if (salarioBase <= 2826.65)
+        {
+            impostoDeRenda = (salarioBase - 1903.98) * 0.075;
+        }
+        else if (salarioBase <= 3751.05)
+        {
+            impostoDeRenda = (salarioBase - 2826.65) * 0.15;
+        }
+        else if (salarioBase <= 4664.68)
+        {
+            impostoDeRenda = (salarioBase - 3751.05) * 0.225;
+        }
+        else
+        {
+            impostoDeRenda = (salarioBase - 4664.68) * 0.275;
         }
 
+        return impostoDeRenda;
+    }
 
-        public static double CalcularImpostoDeRenda(double salarioBruto, int numeroDependentes){
-            // Calcular o salário-base
-                    double salarioBase = salarioBruto - numeroDependentes * 189.59;
+    public static double CalcularIPRF(double salariobruto1)
+    {
+        double tempvar2 = salariobruto1 * 0.07;
+        return tempvar2;
+    }
 
-                    // Calcular o imposto de renda
-                    double impostoDeRenda = 0;
+    public static double CalcularINSS(double salariobruto2)
+    {
+        double tempvar3 = salariobruto2 * 0.08;
+        return tempvar3;
+    }
 
-                    if (salarioBase <= 1903.98)
-                    {
-                        impostoDeRenda = 0;
-                    }
-                    else if (salarioBase <= 2826.65)
-                    {
-                        impostoDeRenda = (salarioBase - 1903.98) * 0.075;
-                    }
-                    else if (salarioBase <= 3751.05)
-                    {
-                        impostoDeRenda = (salarioBase - 2826.65) * 0.15;
-                    }
-                    else if (salarioBase <= 4664.68)
-                    {
-                        impostoDeRenda = (salarioBase - 3751.05) * 0.225;
-                    }
-                    else
-                    {
-                        impostoDeRenda = (salarioBase - 4664.68) * 0.275;
-                    }
+    public static double CalcularFGTS(double salariobruto3)
+    {
+        double tempvar4 = salariobruto3 * 0.08;
+        return tempvar4;
+    }
 
-            return impostoDeRenda;
-        }
+    private static void Main(string[] args)
+    {
+        int option = 0;
 
+        do
+        {
+            Console.WriteLine("Seja bem vindo ao calculator!");
+            Console.WriteLine("Um assistente de cálculos diversos para o ano de 2024!!!");
 
-        public static double CalcularIPRF(double salariobruto1){
-            //calcular iprf
+            Console.WriteLine(" ______         __              __         __              ");
+            Console.WriteLine("|      |.---.-.|  |.----.--.--.|  |.---.-.|  |_.-----.----.");
+            Console.WriteLine("|   ---||  _  ||  ||  __|  |  ||  ||  _  ||   _|  _  |   _|");
+            Console.WriteLine("|______||___._||__||____|_____||__||___._||____|_____|__|");
+            Console.WriteLine("                                              version 0.0.1");
 
-            double tempvar2 = salariobruto1 * 0.07;
+            Console.WriteLine("                     +--------------+");
+            Console.WriteLine("                     |.------------.|");
+            Console.WriteLine("                     ||            ||");
+            Console.WriteLine("                     ||            ||");
+            Console.WriteLine("                     ||            ||");
+            Console.WriteLine("                     ||            ||");
+            Console.WriteLine("                     |+------------+|");
+            Console.WriteLine("                     +-..--------..-+");
+            Console.WriteLine("                     .--------------.");
+            Console.WriteLine("                    / /============\\ \\");
+            Console.WriteLine("                   / /==============\\ \\");
+            Console.WriteLine("                  /____________________\\");
+            Console.WriteLine("                  \\____________________/");
 
-            return tempvar2;
-        }
+            Console.WriteLine("+----------+-----------+----------+----------+----------+-----------+");
+            Console.WriteLine("| Digite 1 | Digite 2  | Digite 3 | Digite 4 | Digite 5 |  Digite 6 |");
+            Console.WriteLine("+----------+-----------+----------+----------+----------+-----------+");
+            Console.WriteLine("| Calcular | Calcular  | Calcular | Calcular | Calcular |   Sair    |");
+            Console.WriteLine("| IPVA     |Imposto de | IRPF     | INSS     | FGTS     |           |");
+            Console.WriteLine("|          |Renda      |          |          |          |           |");
+            Console.WriteLine("+----------+-----------+----------+----------+----------+-----------+");
+            Console.WriteLine("Escolha uma opção agora!");
 
-
-
-
-        public static double CalcularINSS(double salariobruto2){
-            double tempvar3 = salariobruto2 * 0.08;
-
-            return tempvar3;
-        }
-
-
-        public static double CalcularFGTS(double salariobruto3){
-            double tempvar4 = salariobruto3 * 0.08;
-
-            return tempvar4;
-        }
-
-        private static void Main(string[] args)
-         {
-        Console.WriteLine("Seja bem vindo ao calculator!");
-        Console.WriteLine("Um assistente de calculos diversos para o ano de 2024!!!");
-
-
-
-        // Exibir a arte ASCII
-        Console.WriteLine(" ______         __              __         __              ");
-        Console.WriteLine("|      |.---.-.|  |.----.--.--.|  |.---.-.|  |_.-----.----.");
-        Console.WriteLine("|   ---||  _  ||  ||  __|  |  ||  ||  _  ||   _|  _  |   _|");
-        Console.WriteLine("|______||___._||__||____|_____||__||___._||____|_____|__|");
-        Console.WriteLine("                                              version 0.0.1");
-
-
-
-        //18
-
-
-        // Exibir a arte ASCII
-        Console.WriteLine("                     +--------------+");
-        Console.WriteLine("                     |.------------.|");
-        Console.WriteLine("                     ||            ||");
-        Console.WriteLine("                     ||            ||");
-        Console.WriteLine("                     ||            ||");
-        Console.WriteLine("                     ||            ||");
-        Console.WriteLine("                     |+------------+|");
-        Console.WriteLine("                     +-..--------..-+");
-        Console.WriteLine("                     .--------------.");
-        Console.WriteLine("                    / /============\\ \\");
-        Console.WriteLine("                   / /==============\\ \\");
-        Console.WriteLine("                  /____________________\\");
-        Console.WriteLine("                  \\____________________/");
-
-
-        // Exibir a arte ASCII
-        Console.WriteLine("+----------+-----------+----------+----------+----------+");
-        Console.WriteLine("| Digite 1 | Digite 2  | Digite 3 | Digite 4 | Digite 5 |");
-        Console.WriteLine("+----------+-----------+----------+----------+----------+");
-        Console.WriteLine("| Calcular | Calcular  | Calcular | Calcular | Calcular |");
-        Console.WriteLine("| IPVA     |Imposto de | IRPF     | INSS     | FGTS     |");
-        Console.WriteLine("|          |Renda      |          |          |          |");
-        Console.WriteLine("+----------+-----------+----------+----------+----------+");
-
-
-
-        Console.WriteLine("Escolha uma opção agora!");
-
-        //LEITURA DE OPÇÃO
-
-
-        int option = Convert.ToInt32(Console.ReadLine());
-
-
-
+            option = int.Parse(Console.ReadLine());
 
             switch (option)
             {
                 case 1:
-
-                    Console.WriteLine("Você escolheu calcular o IPVA!"); //
-                    Console.WriteLine("Digite agora o seu valor venal.");
+                    Console.WriteLine("Você escolheu calcular o IPVA!");
+                    Console.WriteLine("Digite agora o valor venal.");
                     double valorVenal = double.Parse(Console.ReadLine());
-                    //Console.WriteLine("O seu IPVA É: {0} !", valorvenal);//test
-
-
-
-                    Console.WriteLine("Digite agora o valor de sua aliquota.");
-                    double aliquota = int.Parse(Console.ReadLine());
-                    //Console.WriteLine("O seu IPVA É: {0} !", aliquota);//test
-
-
-
-                    //Calculando o valor do IPVA
-
-                    double valoripva = CalcularIpva( valorVenal, aliquota);
-
-                    Console.WriteLine("O valor do ipva é: {0}", valoripva, "Mensais!!!");
+                    Console.WriteLine("Digite agora o valor da aliquota.");
+                    double aliquota = double.Parse(Console.ReadLine());
+                    double valoripva = CalcularIpva(valorVenal, aliquota);
+                    Console.WriteLine("O valor do IPVA é: {0}", valoripva);
                     break;
                 case 2:
-                    // Calcular o imposto de renda em C#
                     Console.WriteLine("Você escolheu calcular o imposto de renda!");
-                    // Ler a entrada do usuário
                     Console.WriteLine("Digite o seu salário bruto:");
                     double salarioBruto = double.Parse(Console.ReadLine());
-
                     Console.WriteLine("Digite o número de dependentes:");
                     int numeroDependentes = int.Parse(Console.ReadLine());
-
-                    //calcular o imposto de renda
-
                     double impostoDeRenda = CalcularImpostoDeRenda(salarioBruto, numeroDependentes);
-                    Console.WriteLine("O seu imposto de renda é: {0}", impostoDeRenda, "!!!");
-                    
-
-                    // Exibir o resultado
                     Console.WriteLine("O valor do imposto de renda é: {0}", impostoDeRenda);
                     break;
                 case 3:
-                    Console.WriteLine("Você escolheu calcular o seu IPRF!"); //
-                    Console.WriteLine("Digite agora o seu salario Bruto.");
+                    Console.WriteLine("Você escolheu calcular o IPRF!");
+                    Console.WriteLine("Digite agora o seu salário bruto.");
                     double salariobruto1 = double.Parse(Console.ReadLine());
-
                     double tempvar2 = CalcularIPRF(salariobruto1);
-
-                    Console.WriteLine("O seu IPRF é: {0}", tempvar2);
-            
-                    
-
+                    Console.WriteLine("O valor do IPRF é: {0}", tempvar2);
                     break;
-
                 case 4:
-                    Console.WriteLine("4");//
                     Console.WriteLine("Você escolheu calcular o INSS!");
-                    Console.WriteLine("Digite agora o seu salario Bruto.");
-
+                    Console.WriteLine("Digite agora o seu salário bruto.");
                     double salariobruto2 = double.Parse(Console.ReadLine());
-
-                    double tempvar3 = CalcularIPRF(salariobruto2);
-
-                    Console.WriteLine("O seu INSS é: {0}", tempvar3);
-
+                    double tempvar3 = CalcularINSS(salariobruto2);
+                    Console.WriteLine("O valor do INSS é: {0}", tempvar3);
                     break;
-
                 case 5:
-                    Console.WriteLine("5");//
                     Console.WriteLine("Você escolheu calcular o FGTS!");
-                    Console.WriteLine("Digite agora o seu salario Bruto.");
-
+                    Console.WriteLine("Digite agora o seu salário bruto.");
                     double salariobruto3 = double.Parse(Console.ReadLine());
-
-                    double tempvar4 = CalcularIPRF(salariobruto3);
-
-                    Console.WriteLine("O seu FGTS é: {0}", tempvar4);
-
+                    double tempvar4 = CalcularFGTS(salariobruto3);
+                    Console.WriteLine("O valor do FGTS é: {0}", tempvar4);
+                    break;
+                case 6:
+                    Console.WriteLine("Você escolheu sair do programa.");
                     break;
                 default:
-                    Console.WriteLine("O número não é 1, 2, 3, 4 ou 5!!.");//
+                    Console.WriteLine("Opção inválida. Digite um número de 1 a 6.");
                     break;
-
             }
 
-    
+            Console.WriteLine("Deseja continuar? (s/n)");
+            string continuar = Console.ReadLine();
+
+            if (continuar.ToLower() != "s")
+            {
+                break;
+            }
         }
-
-    }
-
-    private string GetDebuggerDisplay()
-    {
-        return ToString();
+        while (option != 6);
     }
 }
